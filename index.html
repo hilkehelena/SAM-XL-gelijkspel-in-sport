@@ -27,7 +27,8 @@
     display: flex; align-items: center; justify-content: space-between;
     padding: 0 40px; height: 64px;
   }
-  .nav-brand { font-weight: 900; font-size: 1.25rem; color: var(--orange); letter-spacing: -.5px; text-decoration: none; }
+  .nav-brand { display: flex; align-items: center; text-decoration: none; }
+  .nav-brand img { height: 36px; width: auto; mix-blend-mode: screen; }
   .nav-links { display: flex; gap: 32px; list-style: none; }
   .nav-links a { color: rgba(255,255,245,.65); text-decoration: none; font-size: .85rem; font-weight: 600; letter-spacing: .5px; text-transform: uppercase; transition: color .2s; }
   .nav-links a:hover { color: var(--lime); }
@@ -204,7 +205,8 @@
   .partners-section { background: var(--navy-mid); padding: 64px 40px; border-top: 1px solid rgba(255,255,255,.07); }
   .partners-label { text-align: center; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,245,.35); margin-bottom: 36px; }
   .partners-logos { display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
-  .partner-logo { height: 44px; display: flex; align-items: center; justify-content: center; }
+  .partner-logo img { height: 44px; width: auto; mix-blend-mode: screen; opacity: .9; }
+  .partner-logo img.on-lime { mix-blend-mode: multiply; opacity: .85; }
 
   /* FOOTER */
   footer {
@@ -245,7 +247,9 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-brand">SAM</a>
+  <a href="#" class="nav-brand">
+    <img src="logos/sam-logo.png" alt="Stichting SAM"/>
+  </a>
   <ul class="nav-links">
     <li><a href="#programma">Programma</a></li>
     <li><a href="#onderdelen">Onderdelen</a></li>
@@ -537,30 +541,19 @@
   <p class="partners-label">Een initiatief van</p>
   <div class="partners-logos">
     <div class="partner-logo">
-      <svg width="80" height="36" viewBox="0 0 80 36">
-        <text x="4" y="28" font-size="26" font-weight="800" fill="#ff6105" font-family="Poppins,sans-serif">SAM</text>
-      </svg>
+      <img src="logos/sam-logo.png" alt="Stichting SAM"/>
     </div>
-    <!-- <img src="ngf-logo.svg" alt="NGF" style="height:44px; opacity:.85;"/> -->
     <div class="partner-logo">
-      <svg width="64" height="36" viewBox="0 0 64 36">
-        <text x="4" y="27" font-size="22" font-weight="800" fill="#fffff5" opacity=".7" font-family="Poppins,sans-serif">NGF</text>
-      </svg>
+      <img src="logos/ngf-logo.png" alt="Koninklijke Nederlandse Golf Federatie"/>
     </div>
-    <!-- <img src="bernardus-logo.svg" alt="Bernardus Golf" style="height:44px; opacity:.85;"/> -->
     <div class="partner-logo">
-      <svg width="175" height="36" viewBox="0 0 175 36">
-        <text x="4" y="25" font-size="14" font-weight="700" fill="#fffff5" opacity=".6" font-family="Poppins,sans-serif">BERNARDUS GOLF</text>
-      </svg>
+      <img src="logos/solheim-bernardus-logo.png" alt="Solheim Cup 2026 — Bernardus Netherlands"/>
     </div>
   </div>
   <p class="partners-label" style="margin-top:48px;">Mede mogelijk gemaakt door</p>
   <div class="partners-logos">
-    <!-- <img src="brabantsport-logo.svg" alt="BrabantSport" style="height:44px; opacity:.85;"/> -->
     <div class="partner-logo">
-      <svg width="160" height="36" viewBox="0 0 160 36">
-        <text x="4" y="25" font-size="14" font-weight="700" fill="#fffff5" opacity=".6" font-family="Poppins,sans-serif">BRABANTSPORT</text>
-      </svg>
+      <img src="logos/brabantsport-logo.png" alt="BrabantSport"/>
     </div>
   </div>
 </div>
@@ -568,7 +561,9 @@
 <!-- FOOTER -->
 <footer>
   <div>
-    <div class="footer-brand">SAM.</div>
+    <div style="margin-bottom:16px;">
+      <img src="logos/sam-logo.png" alt="Stichting SAM" style="height:40px; width:auto; mix-blend-mode:screen;"/>
+    </div>
     <p class="footer-tagline">Samen voor gelijkwaardigheid in sport. SAM luistert. SAM verbindt. SAM verandert.</p>
   </div>
   <div class="footer-col">
