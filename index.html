@@ -19,19 +19,22 @@
   html { scroll-behavior: smooth; }
   body { font-family: 'Poppins', sans-serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
 
-  /* NAV */
   nav {
     position: sticky; top: 0; z-index: 100;
-    background: rgba(5,5,20,.92); backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,.07);
+    background: var(--lila);
+    border-bottom: none;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 0 40px; height: 64px;
+    padding: 0 48px; height: 72px;
   }
   .nav-brand { display: flex; align-items: center; text-decoration: none; }
-  .nav-brand img { height: 48px; width: auto; mix-blend-mode: screen; }
-  .nav-links { display: flex; gap: 32px; list-style: none; }
-  .nav-links a { color: rgba(255,255,245,.65); text-decoration: none; font-size: .85rem; font-weight: 600; letter-spacing: .5px; text-transform: uppercase; transition: color .2s; }
-  .nav-links a:hover { color: var(--lime); }
+  .nav-brand img { height: 32px; width: auto; }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    color: var(--navy); text-decoration: none;
+    font-size: .82rem; font-weight: 600; letter-spacing: .3px;
+    transition: opacity .2s;
+  }
+  .nav-links a:hover { opacity: .6; }
 
   /* HERO */
   .hero {
@@ -208,18 +211,65 @@
   .partner-logo img { height: 44px; width: auto; mix-blend-mode: screen; opacity: .9; }
   .partner-logo img.on-lime { mix-blend-mode: multiply; opacity: .85; }
 
-  /* FOOTER */
-  footer {
-    background: var(--navy); border-top: 1px solid rgba(255,255,255,.07);
-    padding: 48px 40px; display: grid; grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px; max-width: 1100px; margin: 0 auto;
+  /* FOOTER — SAM website stijl */
+  .footer-wrap {
+    background: var(--lila);
+    border-top: none;
   }
-  .footer-brand { font-weight: 900; font-size: 1.3rem; color: var(--orange); margin-bottom: 12px; }
-  .footer-tagline { font-size: .85rem; color: rgba(255,255,245,.45); line-height: 1.6; }
-  .footer-col h4 { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,245,.35); margin-bottom: 16px; }
-  .footer-col p, .footer-col a { font-size: .88rem; color: rgba(255,255,245,.6); line-height: 1.8; text-decoration: none; display: block; }
-  .footer-col a:hover { color: var(--orange); }
-  .footer-bottom { border-top: 1px solid rgba(255,255,255,.06); padding: 24px 40px; text-align: center; font-size: .78rem; color: rgba(255,255,245,.3); max-width: 1100px; margin: 0 auto; }
+  .footer-tagline { font-size: .95rem; color: var(--navy); line-height: 1.65; font-weight: 300; margin-bottom: 20px; max-width: 240px; opacity: .75; }
+  .footer-email a { color: var(--navy); font-size: .9rem; font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(5,5,20,.25); padding-bottom: 2px; transition: opacity .2s; }
+  .footer-email a:hover { opacity: .6; }
+  .footer-col h4 { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--navy); margin-bottom: 18px; opacity: .5; }
+  .footer-col ul li a { font-size: .88rem; color: var(--navy); text-decoration: none; font-weight: 600; transition: opacity .2s; line-height: 1.5; }
+  .footer-col ul li a:hover { opacity: .6; }
+  .footer-col p { font-size: .88rem; color: var(--navy); line-height: 1.7; font-weight: 500; }
+  .footer-bottom { border-top: 1px solid rgba(5,5,20,.15); max-width: 1100px; margin: 0 auto; padding: 20px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-legal a { font-size: .75rem; color: var(--navy); opacity: .5; text-decoration: none; transition: opacity .2s; }
+  .footer-legal a:hover { opacity: .9; }
+  .footer-copy { font-size: .75rem; color: var(--navy); opacity: .4; }
+  .footer-main {
+    max-width: 1100px; margin: 0 auto;
+    padding: 72px 48px 56px;
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px;
+  }
+  .footer-brand-col {}
+  .footer-brand-logo { margin-bottom: 20px; }
+  .footer-brand-logo img { height: 32px; width: auto; mix-blend-mode: screen; }
+  .footer-tagline {
+    font-size: .95rem; color: rgba(255,255,245,.55);
+    line-height: 1.65; font-weight: 300; margin-bottom: 20px; max-width: 240px;
+  }
+  .footer-email a {
+    color: var(--lila); font-size: .9rem; font-weight: 500;
+    text-decoration: none; border-bottom: 1px solid rgba(201,191,240,.3);
+    padding-bottom: 2px; transition: border-color .2s, color .2s;
+  }
+  .footer-email a:hover { border-color: var(--lila); color: var(--white); }
+  .footer-col h4 {
+    font-size: .72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 2px; color: var(--lila); margin-bottom: 18px; opacity: .7;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a {
+    font-size: .88rem; color: rgba(255,255,245,.6); text-decoration: none;
+    font-weight: 400; transition: color .2s; line-height: 1.5;
+  }
+  .footer-col ul li a:hover { color: var(--white); }
+  .footer-col p { font-size: .88rem; color: rgba(255,255,245,.6); line-height: 1.7; font-weight: 300; }
+  .footer-bottom {
+    border-top: 1px solid rgba(201,191,240,.15);
+    max-width: 1100px; margin: 0 auto;
+    padding: 20px 48px;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+  .footer-legal { display: flex; gap: 24px; flex-wrap: wrap; }
+  .footer-legal a {
+    font-size: .75rem; color: rgba(255,255,245,.3);
+    text-decoration: none; transition: color .2s;
+  }
+  .footer-legal a:hover { color: rgba(255,255,245,.6); }
+  .footer-copy { font-size: .75rem; color: rgba(255,255,245,.25); }
 
   /* RESPONSIVE */
   @media (max-width: 768px) {
@@ -559,27 +609,46 @@
 </div>
 
 <!-- FOOTER -->
-<footer>
-  <div>
-    <div style="margin-bottom:16px;">
-      <img src="logos/sam-logo.png" alt="Stichting SAM" style="height:40px; width:auto; mix-blend-mode:screen;"/>
+<div class="footer-wrap">
+  <div class="footer-main">
+    <div class="footer-brand-col">
+      <div class="footer-brand-logo">
+        <img src="logos/sam-logo.png" alt="Stichting SAM"/>
+      </div>
+      <p class="footer-tagline">Samen voor gelijkwaardigheid in sport.</p>
+      <div class="footer-email">
+        <a href="mailto:info@stichting-sam.com">info@stichting-sam.com</a>
+      </div>
     </div>
-    <p class="footer-tagline">Samen voor gelijkwaardigheid in sport. SAM luistert. SAM verbindt. SAM verandert.</p>
+    <div class="footer-col">
+      <h4>Locatie</h4>
+      <p>Bernardus Golf<br/>Deutersestraat 39<br/>5266 NH Cromvoirt</p>
+    </div>
+    <div class="footer-col">
+      <h4>Pagina</h4>
+      <ul>
+        <li><a href="#programma">Programma</a></li>
+        <li><a href="#onderdelen">Onderdelen</a></li>
+        <li><a href="#spreker">Spreker</a></li>
+        <li><a href="#rsvp">Aanmelden</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Stichting SAM</h4>
+      <ul>
+        <li><a href="https://www.stichting-sam.com" target="_blank">Over SAM</a></li>
+        <li><a href="https://www.stichting-sam.com/nl/nieuws" target="_blank">Nieuws</a></li>
+        <li><a href="https://www.stichting-sam.com/nl/contact" target="_blank">Contact</a></li>
+      </ul>
+    </div>
   </div>
-  <div class="footer-col">
-    <h4>Locatie</h4>
-    <p>Bernardus Golf</p>
-    <p>Deutersestraat 39</p>
-    <p>5266 NH Cromvoirt</p>
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      <a href="https://www.stichting-sam.com/nl/privacy" target="_blank">Privacy policy</a>
+      <a href="https://www.stichting-sam.com/nl/veelgestelde-vragen" target="_blank">Veelgestelde vragen</a>
+    </div>
+    <span class="footer-copy">© 2026 Stichting SAM · Gelijkspel in Sport · 11 mei 2026</span>
   </div>
-  <div class="footer-col">
-    <h4>Contact</h4>
-    <a href="mailto:info@stichting-sam.com">info@stichting-sam.com</a>
-    <a href="https://www.stichting-sam.com" target="_blank">www.stichting-sam.com</a>
-  </div>
-</footer>
-<div class="footer-bottom">
-  © 2026 Stichting SAM · Gelijkspel in Sport · 11 mei 2026
 </div>
 
 </body>
