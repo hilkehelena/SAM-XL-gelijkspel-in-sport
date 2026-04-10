@@ -181,6 +181,30 @@
   .spotlight-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
   .spotlight-tag { font-size: .75rem; font-weight: 600; padding: 4px 12px; border-radius: 999px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); color: rgba(255,255,245,.7); }
 
+  /* PANELISTS — crème */
+  .panelists-section { background: var(--cream); border-top: 1px solid rgba(5,5,20,.08); padding: 96px 40px; }
+  .panelists-inner { max-width: 900px; margin: 0 auto; }
+  .panelists-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+  .panelist-card { text-align: center; }
+  .panelist-photo {
+    width: 100%; aspect-ratio: 1/1; border-radius: 12px; overflow: hidden;
+    background: linear-gradient(135deg, var(--lila) 0%, rgba(201,191,240,.4) 100%);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px; border: 1px solid rgba(5,5,20,.08);
+  }
+  .panelist-photo--img { padding: 0; background: none; border: none; }
+  .panelist-photo--img img { width: 100%; height: 100%; object-fit: cover; object-position: top center; border-radius: 12px; display: block; }
+  .panelist-initials {
+    font-size: 2rem; font-weight: 900; color: var(--navy); opacity: .35;
+    letter-spacing: -1px;
+  }
+  .panelist-card h4 { font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: 4px; line-height: 1.2; }
+  .panelist-org { display: inline-block; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--orange); margin-bottom: 10px; }
+  .panelist-card p { font-size: .82rem; color: rgba(5,5,20,.55); line-height: 1.6; font-weight: 300; }
+  @media (max-width: 768px) {
+    .panelists-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+  }
+
   /* RSVP — crème */
   .rsvp-section { background: var(--cream); border-top: 1px solid rgba(5,5,20,.08); }
   .rsvp-section .section-label { color: var(--orange); }
@@ -288,7 +312,7 @@
       </div>
       <div class="meta-item">
         <span class="meta-icon">🕒</span>
-        <div class="meta-text">15:00 – 18:30<span>Inloop vanaf 15:00</span></div>
+        <div class="meta-text">15:00 – 18:30<span>Inloop vanaf 14:30</span></div>
       </div>
       <div class="meta-item">
         <span class="meta-icon">📍</span>
@@ -348,7 +372,7 @@
         <p>Sla direct mee. Teams scoren gezamenlijk punten door targets te raken. Samenwerking en energie staan centraal — geen techniekles, gewoon spelen.</p>
       </div>
       <div class="component-card">
-        <span class="component-icon">🏌️</span>
+        <span class="component-icon">🏌️🏌️‍♀️</span>
         <span class="component-tag tag-golf">Golf · Team Bernardus</span>
         <h3>Short Game Area &amp; Putting Course</h3>
         <p>Speel een putting parcours in scramble-format. Aansluitend bij het Solheim Cup-thema. Toegankelijk voor beginner tot gevorderd.</p>
@@ -378,18 +402,32 @@
     </div>
     <div class="timeline">
       <div class="tl-item">
+        <div class="tl-time">14:30</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <h3>Ontvangst</h3>
+          <p>Welkom bij Bernardus Golf. Neem een drankje en maak kennis met de andere genodigden.</p>
+        </div>
+      </div>
+      <div class="tl-item">
         <div class="tl-time">15:00</div>
         <div class="tl-dot"></div>
         <div class="tl-content">
-          <h3>Inloop &amp; ontvangst</h3>
-          <p>Welkom bij Bernardus Golf. Neem een drankje en maak kennis met de andere genodigden.</p>
+          <h3>De urgentie</h3>
+          <p>Marieke Maas, directeur Stichting SAM geeft in een open gesprek de noodzaak van gelijkwaardigheid in sport aan, met:</p>
+          <ul style="margin-top:8px; padding-left:18px; font-size:.85rem; color:rgba(5,5,20,.65); line-height:1.9; font-weight:400;">
+            <li><strong style="color:var(--navy); font-weight:700;">Frederique de Laat</strong> — Founder Branthlete</li>
+            <li><strong style="color:var(--navy); font-weight:700;">Britt Messing</strong> — Founder For You Agency</li>
+            <li><strong style="color:var(--navy); font-weight:700;">Pasqualle Coffa</strong> — Professioneel Golfster</li>
+            <li><strong style="color:var(--navy); font-weight:700;">Kelly Staa</strong> — Hoofdredacteur Cosmopolitan</li>
+          </ul>
         </div>
       </div>
       <div class="tl-item">
         <div class="tl-time">15:30</div>
         <div class="tl-dot"></div>
         <div class="tl-content">
-          <h3>Start ronde 1</h3>
+          <h3>Start interactieve onderdelen</h3>
           <p>Je kiest je route voor de eerste ronde:</p>
           <span class="tl-badge badge-golf">⛳ Golf · Team Bernardus</span>
           &nbsp;
@@ -457,6 +495,49 @@
   </div>
 </section>
 
+<!-- PANELISTS -->
+<section class="panelists-section">
+  <div class="panelists-inner">
+    <span class="section-label" style="display:block; text-align:center; margin-bottom:12px;">Panelgesprek 15:00</span>
+    <h2 class="section-title" style="text-align:center; margin-bottom:12px;">De stemmen aan tafel.</h2>
+    <p class="section-lead" style="text-align:center; margin:0 auto 56px;">Vier vrouwen die het gesprek over urgentie in sport van binnenuit kennen — en er dagelijks aan werken.</p>
+    <div class="panelists-grid">
+      <div class="panelist-card">
+        <div class="panelist-photo">
+          <div class="panelist-initials">FL</div>
+        </div>
+        <h4>Frederique de Laat</h4>
+        <span class="panelist-org">Founder Branthlete</span>
+        <p>Oprichter van het enige Europese marketingbureau dat zich volledig richt op vrouwensport. Met gedurfde storytelling en creatieve campagnes helpt ze clubs en merken om vrouwelijke atleten het podium te geven dat ze verdienen. Een week na oprichting belde Olympique Lyonnais al voor een workshop, en binnen een halfjaar werkte Branthlete al voor topclubs als Napoli Women, Aston Villa en supermarktketen Lidl.</p>
+      </div>
+      <div class="panelist-card">
+        <div class="panelist-photo">
+          <div class="panelist-initials">BM</div>
+        </div>
+        <h4>Britt Messing</h4>
+        <span class="panelist-org">Founder For You Agency</span>
+        <p>Op haar 23ste richtte ze For You Agency op, midden in de coronatijd, zonder businessplan. Inmiddels is het een social-first marketingbureau van 35 mensen dat A-merken als Rituals, Philips en Unox helpt om via content, campagnes en talentmanagement echt onderdeel te worden van de culturele conversatie. Gebouwd door creators, voor creators, met Gen Z en Gen A als kern.</p>
+      </div>
+      <div class="panelist-card">
+        <div class="panelist-photo panelist-photo--img">
+          <img src="fotos/pasqualle.jpg" alt="Pasqualle Coffa"/>
+        </div>
+        <h4>Pasqualle Coffa</h4>
+        <span class="panelist-org">Professioneel Golfster</span>
+        <p>Ze ruilde op haar 16e haar paard in voor een golfclub en groeide uit tot professioneel golfster op de Ladies European Tour. Niet de makkelijkste weg: vrouwelijke golfers strijden in een sport waar zichtbaarheid, sponsoring en kansen nog altijd ongelijk verdeeld zijn. Pasqualle weet dat als geen ander. Tegenslagen accepteert ze als onderdeel van het spel, maar stilstaan doet ze niet. Haar mindset: niet perfectie, maar dagelijkse progressie. En juist die vastberadenheid maakt haar stem in dit panel zo waardevol.</p>
+      </div>
+      <div class="panelist-card">
+        <div class="panelist-photo">
+          <div class="panelist-initials">KS</div>
+        </div>
+        <h4>Kelly Staa</h4>
+        <span class="panelist-org">Hoofdredacteur Cosmopolitan</span>
+        <p>Hoofdredacteur van Cosmopolitan Nederland en dagelijks bezig met de vraag wiens verhalen verteld worden en hoe. Vanuit een van de meest invloedrijke vrouwenplatforms van het land brengt ze een scherp mediaoog perspectief mee op representatie, gelijkwaardigheid en de kracht van zichtbaarheid.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- RSVP -->
 <section class="rsvp-section" id="rsvp">
   <div class="rsvp-inner">
@@ -498,7 +579,7 @@
       </div>
       <p class="footer-tagline">Samen voor gelijkwaardigheid in sport.</p>
       <div class="footer-email">
-        <a href="mailto:info@stichting-sam.com">info@stichting-sam.com</a>
+        <a href="/cdn-cgi/l/email-protection#60090e060f20131409030814090e074d13010d4e030f0d"><span class="__cf_email__" data-cfemail="d2bbbcb4bd92a1a6bbb1baa6bbbcb5ffa1b3bffcb1bdbf">[email&#160;protected]</span></a>
       </div>
     </div>
     <div class="footer-col">
@@ -527,10 +608,3 @@
     <div class="footer-legal">
       <a href="https://www.stichting-sam.com/nl/privacy" target="_blank">Privacy policy</a>
       <a href="https://www.stichting-sam.com/nl/veelgestelde-vragen" target="_blank">Veelgestelde vragen</a>
-    </div>
-    <span class="footer-copy">© 2026 Stichting SAM · Gelijkspel in Sport · 11 mei 2026</span>
-  </div>
-</div>
-
-</body>
-</html>
